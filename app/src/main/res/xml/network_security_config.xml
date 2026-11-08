@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">api.apk.v-mate.mobi</domain>
+        <domain includeSubdomains="true">v-mate.mobi</domain>
+        <domain includeSubdomains="true">vidmatefilm.org</domain>
+        <domain includeSubdomains="true">gameschalo.com</domain>
+        <domain includeSubdomains="true">paytm.in</domain>
+        <domain includeSubdomains="true">vidmate.mobi</domain>
+    </domain-config>
+</network-security-config>
