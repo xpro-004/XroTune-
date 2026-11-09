@@ -19,11 +19,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -101,7 +101,7 @@ fun PlaylistsScreen(
                                     .background(Brush.linearGradient(listOf(XroPurple, XroPink))),
                                 contentAlignment = Alignment.Center,
                             ) {
-                                Icon(Icons.Default.PlaylistPlay, contentDescription = null, tint = androidx.compose.ui.graphics.Color.White)
+                                Icon(Icons.AutoMirrored.Filled.PlaylistPlay, contentDescription = null, tint = androidx.compose.ui.graphics.Color.White)
                             }
                             Spacer(Modifier.width(14.dp))
                             Column(modifier = Modifier.weight(1f)) {
@@ -175,7 +175,7 @@ fun PlaylistsScreen(
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun PlaylistDetailScreen(
-    playlistId: Long,
+    @Suppress("UNUSED_PARAMETER") playlistId: Long,
     onBack: () -> Unit,
     onSongClick: (String) -> Unit,
     viewModel: PlaylistDetailViewModel = hiltViewModel(),
@@ -205,7 +205,7 @@ fun PlaylistDetailScreen(
                             onClick = { playerViewModel.playQueue(songs, 0) },
                             modifier = Modifier.padding(horizontal = 8.dp),
                         ) {
-                            Icon(Icons.Default.PlaylistPlay, contentDescription = null)
+                            Icon(Icons.AutoMirrored.Filled.PlaylistPlay, contentDescription = null)
                             Spacer(Modifier.width(8.dp))
                             Text("Play all")
                         }

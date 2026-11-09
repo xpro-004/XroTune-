@@ -22,9 +22,9 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.LibraryMusic
-import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -62,7 +62,7 @@ fun HomeScreen(
     onPlaylistsClick: () -> Unit,
     onLibraryClick: () -> Unit,
     onDownloadsClick: () -> Unit,
-    onPlayerClick: () -> Unit,
+    @Suppress("UNUSED_PARAMETER") onPlayerClick: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -230,7 +230,7 @@ private fun QuickActions(onPlaylists: () -> Unit, onLibrary: () -> Unit, onDownl
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        QuickAction(Modifier.weight(1f), Icons.Default.PlaylistPlay, "Playlists", onPlaylists)
+        QuickAction(Modifier.weight(1f), Icons.AutoMirrored.Filled.PlaylistPlay, "Playlists", onPlaylists)
         QuickAction(Modifier.weight(1f), Icons.Default.LibraryMusic, "Library", onLibrary)
         QuickAction(Modifier.weight(1f), Icons.Default.Download, "Downloads", onDownloads)
     }

@@ -14,10 +14,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.filled.PlaylistAdd
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -66,7 +66,7 @@ fun SongActionsSheet(
                 }
             }
             Spacer(Modifier.height(8.dp))
-            ActionRow(Icons.Default.PlaylistAdd, "Add to playlist", onAddToPlaylist)
+            ActionRow(Icons.AutoMirrored.Filled.PlaylistAdd, "Add to playlist", onAddToPlaylist)
             ActionRow(Icons.Default.Download, "Download", onDownload)
             ActionRow(
                 if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
@@ -74,7 +74,7 @@ fun SongActionsSheet(
                 onToggleFavorite,
             )
             ActionRow(Icons.Default.Share, "Share", onShare)
-            ActionRow(Icons.Default.PlaylistAdd, "View similar songs", onViewSimilar)
+            ActionRow(Icons.AutoMirrored.Filled.PlaylistAdd, "View similar songs", onViewSimilar)
             Spacer(Modifier.height(16.dp))
         }
     }

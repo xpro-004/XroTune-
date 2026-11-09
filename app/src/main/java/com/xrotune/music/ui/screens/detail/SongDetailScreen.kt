@@ -21,11 +21,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.PlaylistAdd
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -82,7 +82,7 @@ fun SongDetailScreen(
             else -> {
                 val song = state.song!!
                 LazyColumn(contentPadding = PaddingValues(bottom = 32.dp)) {
-                    item { DetailHeader(song, onBack, onOpenPlayer) }
+                    item { DetailHeader(song, onBack) }
                     item {
                         Row(
                             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
@@ -100,7 +100,7 @@ fun SongDetailScreen(
                                 Spacer(Modifier.width(6.dp))
                                 Text("Play")
                             }
-                            CircleAction(Icons.Default.PlaylistAdd) { showActions = true }
+                            CircleAction(Icons.AutoMirrored.Filled.PlaylistAdd) { showActions = true }
                             CircleAction(Icons.Default.Download) {
                                 actionsViewModel.download(song)
                             }
@@ -154,7 +154,7 @@ fun SongDetailScreen(
 }
 
 @Composable
-private fun DetailHeader(song: Song, onBack: () -> Unit, onOpenPlayer: () -> Unit) {
+private fun DetailHeader(song: Song, onBack: () -> Unit) {
     Column {
         Box(modifier = Modifier.fillMaxWidth().aspectRatio(1.1f)) {
             AsyncImage(

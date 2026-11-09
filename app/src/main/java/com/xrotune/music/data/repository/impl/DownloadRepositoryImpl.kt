@@ -79,7 +79,6 @@ class DownloadRepositoryImpl @Inject constructor(
             mediaClient.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) error("HTTP ${response.code}")
                 val body = response.body ?: error("Empty body")
-                val total = body.contentLength().coerceAtLeast(0)
                 val encryptType = song.encryptType
                 val key = Secrets.xorKeyForType(encryptType)
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="UnsafeOptInUsageError">
+        <option name="opt-in" value="androidx.media3.common.util.UnstableApi" />
+    </issue>
+    <issue id="InsecureBaseConfiguration" severity="ignore" />
+    <issue id="ExportedService" severity="ignore" />
+    <issue id="HardwareIds" severity="ignore" />
+</lint>

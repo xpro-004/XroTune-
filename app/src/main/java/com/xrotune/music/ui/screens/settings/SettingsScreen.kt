@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -41,7 +42,7 @@ fun SettingsScreen(
     val wifiOnly by viewModel.wifiOnly.collectAsStateWithLifecycle()
     val highQuality by viewModel.highQuality.collectAsStateWithLifecycle()
     val autoplay by viewModel.autoplay.collectAsStateWithLifecycle()
-    var languageIndex by remember { mutableStateOf(0) }
+    var languageIndex by remember { mutableIntStateOf(0) }
     val languages = listOf("en" to "English", "hi" to "हिन्दी", "ta" to "தமிழ்", "te" to "తెలుగు")
 
     Scaffold(
@@ -114,7 +115,7 @@ private fun SettingsSection(title: String) {
         color = MaterialTheme.colorScheme.primary,
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
     )
-    Divider(color = MaterialTheme.colorScheme.outline, modifier = Modifier.padding(horizontal = 16.dp))
+    HorizontalDivider(color = MaterialTheme.colorScheme.outline, modifier = Modifier.padding(horizontal = 16.dp))
 }
 
 @Composable

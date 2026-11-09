@@ -1,7 +1,9 @@
 package com.xrotune.music.data.player
 
 import android.net.Uri
+import androidx.annotation.OptIn
 import androidx.media3.common.C
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.BaseDataSource
 import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DataSpec
@@ -15,6 +17,7 @@ import java.io.IOException
  * repeating 16-byte XOR key. ExoPlayer can seek inside the stream, so we track
  * the absolute byte offset and derive the key index from it.
  */
+@OptIn(UnstableApi::class)
 class XorDataSource(
     private val upstream: DataSource,
     private val type: Int,
@@ -58,6 +61,7 @@ class XorDataSource(
         }
     }
 
+    @OptIn(UnstableApi::class)
     class Factory(private val upstreamFactory: DataSource.Factory, private val type: Int) : DataSource.Factory {
         override fun createDataSource(): DataSource = XorDataSource(upstreamFactory.createDataSource(), type)
 

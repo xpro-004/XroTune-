@@ -19,11 +19,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Cloud
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.LibraryMusic
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -108,7 +108,7 @@ fun ProfileScreen(
 
         item {
             Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-                ProfileItem(Icons.Default.PlaylistPlay, "My playlists", "Create and manage playlists", onPlaylistsClick)
+                ProfileItem(Icons.AutoMirrored.Filled.PlaylistPlay, "My playlists", "Create and manage playlists", onPlaylistsClick)
                 ProfileItem(Icons.Default.Download, "Downloads", "Offline songs and download manager", onDownloadsClick)
                 ProfileItem(Icons.Default.LibraryMusic, "Library", "Favourites, history and offline", onDownloadsClick)
                 ProfileItem(Icons.Default.Settings, "Settings", "Playback, downloads and about", onSettingsClick)

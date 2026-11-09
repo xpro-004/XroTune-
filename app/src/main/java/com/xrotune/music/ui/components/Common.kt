@@ -48,10 +48,10 @@ fun LoadingBox(modifier: Modifier = Modifier, label: String? = null) {
 fun MessageState(
     icon: ImageVector,
     title: String,
+    modifier: Modifier = Modifier,
     subtitle: String? = null,
     actionLabel: String? = null,
     onAction: (() -> Unit)? = null,
-    modifier: Modifier = Modifier,
 ) {
     Box(modifier = modifier.fillMaxSize().padding(32.dp), contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -81,11 +81,32 @@ fun MessageState(
 
 @Composable
 fun ErrorState(message: String, onRetry: () -> Unit, modifier: Modifier = Modifier) =
-    MessageState(Icons.Default.CloudOff, "Something went wrong", message, "Retry", onRetry, modifier)
+    MessageState(
+        icon = Icons.Default.CloudOff,
+        title = "Something went wrong",
+        modifier = modifier,
+        subtitle = message,
+        actionLabel = "Retry",
+        onAction = onRetry,
+    )
 
 @Composable
-fun EmptyState(title: String, subtitle: String? = null, modifier: Modifier = Modifier) =
-    MessageState(Icons.Default.MusicNote, title, subtitle, modifier = modifier)
+fun EmptyState(title: String, modifier: Modifier = Modifier, subtitle: String? = null) =
+    MessageState(
+        icon = Icons.Default.MusicNote,
+        title = title,
+        modifier = modifier,
+        subtitle = subtitle,
+    )
+
+@Composable
+fun EmptyState(title: String, subtitle: String?, modifier: Modifier = Modifier) =
+    MessageState(
+        icon = Icons.Default.MusicNote,
+        title = title,
+        modifier = modifier,
+        subtitle = subtitle,
+    )
 
 @Composable
 fun SectionHeader(title: String, modifier: Modifier = Modifier, trailing: @Composable (() -> Unit)? = null) {
