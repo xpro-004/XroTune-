@@ -46,7 +46,7 @@ import com.xrotune.music.ui.viewmodel.PlayerViewModel
 @Composable
 fun SearchScreen(
     onSongClick: (String) -> Unit,
-    onPlayerClick: () -> Unit,
+    @Suppress("UNUSED_PARAMETER") onPlayerClick: () -> Unit,
     viewModel: SearchViewModel = hiltViewModel(),
     playerViewModel: PlayerViewModel = hiltViewModel(),
     actionsViewModel: com.xrotune.music.ui.viewmodel.SongActionsViewModel = hiltViewModel(),

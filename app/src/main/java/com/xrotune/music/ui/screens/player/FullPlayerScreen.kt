@@ -22,11 +22,11 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Repeat
 import androidx.compose.material.icons.filled.RepeatOne
 import androidx.compose.material.icons.filled.Share
@@ -94,7 +94,6 @@ fun FullPlayerScreen(
     var draggingValue by remember { mutableFloatStateOf(-1f) }
     val progress = if (duration > 0) position.toFloat() / duration.toFloat() else 0f
     val sliderValue = if (draggingValue >= 0f) draggingValue else progress.coerceIn(0f, 1f)
-    val rotation by animateFloatAsState(targetValue = if (isPlaying) 360f else 0f, label = "disc")
 
     Column(
         modifier = Modifier
@@ -295,7 +294,7 @@ private fun PlayerTopBar(onBack: () -> Unit) {
             modifier = Modifier.weight(1f),
         )
         IconButton(onClick = {}) {
-            Icon(Icons.Default.PlaylistPlay, contentDescription = "Queue", tint = MaterialTheme.colorScheme.onSurfaceVariant)
+            Icon(Icons.AutoMirrored.Filled.PlaylistPlay, contentDescription = "Queue", tint = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }

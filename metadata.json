@@ -1,0 +1,8 @@
+{
+  "name": "XroTune",
+  "description": "Android music and video player client with dark theme, offline downloads, playlist management, and background playback.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

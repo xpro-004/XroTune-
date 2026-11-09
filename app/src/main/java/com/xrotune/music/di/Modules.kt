@@ -42,6 +42,7 @@ object AppModule {
 
     @Provides
     @Singleton
+    @Suppress("DEPRECATION")
     fun provideGson(): Gson = GsonBuilder().setLenient().create()
 
     @Provides

@@ -119,7 +119,7 @@ fun XroTuneNavHost(navController: NavHostController) {
             arguments = listOf(navArgument("songId") { type = NavType.StringType }),
             enterTransition = { slideInVertically(tween(260)) { it / 6 } + fadeIn(tween(260)) },
             exitTransition = { fadeOut(tween(160)) },
-        ) { entry ->
+        ) { _ ->
             SongDetailScreen(
                 onBack = { navController.popBackStack() },
                 onOpenPlayer = { navController.navigate(Routes.PLAYER) },

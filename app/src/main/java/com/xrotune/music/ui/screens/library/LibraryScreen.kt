@@ -17,8 +17,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
 import androidx.compose.material.icons.filled.Download
-import androidx.compose.material.icons.filled.PlaylistPlay
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ScrollableTabRow
@@ -49,7 +49,7 @@ fun LibraryScreen(
     onSongClick: (String) -> Unit,
     onPlaylistsClick: () -> Unit,
     onDownloadsClick: () -> Unit,
-    onPlayerClick: () -> Unit,
+    @Suppress("UNUSED_PARAMETER") onPlayerClick: () -> Unit,
     viewModel: LibraryViewModel = hiltViewModel(),
     playerViewModel: PlayerViewModel = hiltViewModel(),
 ) {
@@ -119,7 +119,7 @@ fun LibraryScreen(
                                             .background(Brush.linearGradient(listOf(XroPurple, XroPink))),
                                         contentAlignment = Alignment.Center,
                                     ) {
-                                        Icon(Icons.Default.PlaylistPlay, contentDescription = null, tint = androidx.compose.ui.graphics.Color.White)
+                                        Icon(Icons.AutoMirrored.Filled.PlaylistPlay, contentDescription = null, tint = androidx.compose.ui.graphics.Color.White)
                                     }
                                     Spacer(Modifier.width(14.dp))
                                     Text(

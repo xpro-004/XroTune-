@@ -34,7 +34,7 @@ val BrandGradient: Brush
 
 @Composable
 fun XroTuneTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    @Suppress("UNUSED_PARAMETER") darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
     // The app is dark-first; the light system setting still uses the dark brand scheme.

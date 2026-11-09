@@ -1,11 +1,13 @@
 package com.xrotune.music.data.player
 
 import android.content.Context
+import androidx.annotation.OptIn
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import com.xrotune.music.domain.model.Song
@@ -29,6 +31,7 @@ enum class RepeatMode { OFF, ALL, ONE }
  * playback state to the UI. ExoPlayer is wrapped in a MediaSession by
  * [PlaybackService] so playback survives in the background.
  */
+@OptIn(UnstableApi::class)
 @Singleton
 class PlayerController @Inject constructor(
     @ApplicationContext context: Context,

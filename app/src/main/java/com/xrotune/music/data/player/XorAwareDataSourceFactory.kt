@@ -2,6 +2,8 @@ package com.xrotune.music.data.player
 
 import android.content.Context
 import android.net.Uri
+import androidx.annotation.OptIn
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.DefaultDataSource
@@ -15,6 +17,7 @@ import java.net.URLEncoder
  * This lets a single ExoPlayer instance mix encrypted native streams and
  * ordinary (already downloaded / plain) files.
  */
+@OptIn(UnstableApi::class)
 class XorAwareDataSourceFactory(context: Context) : DataSource.Factory {
 
     private val upstreamFactory = DefaultDataSource.Factory(context)
@@ -29,6 +32,7 @@ class XorAwareDataSourceFactory(context: Context) : DataSource.Factory {
     }
 }
 
+@OptIn(UnstableApi::class)
 private class XorAwareDataSource(private val upstream: DataSource) : DataSource {
 
     private var delegate: DataSource = upstream

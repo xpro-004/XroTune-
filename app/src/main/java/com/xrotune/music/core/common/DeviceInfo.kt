@@ -1,5 +1,6 @@
 package com.xrotune.music.core.common
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -10,6 +11,7 @@ import javax.inject.Singleton
 @Singleton
 class DeviceInfo @Inject constructor(@ApplicationContext private val context: Context) {
 
+    @get:SuppressLint("HardwareIds")
     val androidId: String by lazy {
         runCatching {
             android.provider.Settings.Secure.getString(context.contentResolver, android.provider.Settings.Secure.ANDROID_ID)
